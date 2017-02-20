@@ -1,0 +1,30 @@
+{
+  "name": "es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "execute" : "node dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\"https://samriddhac:Severus11#@github.com/samriddhac/es6.git\""
+  },
+  "keywords": [
+    "es6",
+    "es-2015"
+  ],
+  "author": "Samriddha Chatterjee",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-stage-2": "^6.22.0"
+  }
+}
