@@ -3,11 +3,11 @@ var webpack = require('webpack');
 
 var config = {
 	entry: [
-		'./src/index.js'
+		'./src/index' //index.js is invalid entry
 	],
 	output : {
 		path : path.join(__dirname, 'dist'),
-		filename: 'bundle.js'
+		filename: 'app.bundle.js'
 	},
 	plugins: [
 		new webpack.optimize.UglifyJsPlugin({
@@ -20,8 +20,11 @@ var config = {
 		loaders: [
 			{
 				test: /\.js$/,
-				loaders: ['babel-loader'],
-				include: path.join(__dirname, 'src')
+				loaders: 'babel-loader', //This should not be array
+				include: path.join(__dirname, 'src'),
+				query: {
+					presets: ['es2015']
+				}
 			}
 		]
 	}
