@@ -1,3 +1,4 @@
+//Proof of Concept Script 1
 //Block Bindling :- Usage of let
 
 //The variables declared using var is treated as if they are declared at the top of the function
@@ -52,3 +53,74 @@ for (let i = 0; i <= 10; i++) {
 }
 funcs.forEach(function(func){func();});
 
+//Constants in for loop :-
+//The behavior depends on the type of for loop.
+
+//for(const i=0; i<10; i++) { --This will throw run time error . As constants cannot be modified.
+//	console.log(i);
+//}
+
+//In the following area let and const act in same manner.
+var func = [], objects = { 
+	a: true,
+	b: false,
+	c: true
+};
+for(const key in objects) {
+	func.push(function() {
+		console.log(key);
+	});
+}
+func.forEach(function(func) {
+	func();
+});
+
+//When a var is declared as global. It becomes a property of the global object 'windows'.
+//let declaration does not bind with global object.
+
+//Proof of Concept Script 2
+//Strings 
+
+//Prior to ES6 javascript characters are revolved around 16 it character encoding. 
+//the Unicode stated goal was to provide a global unique identifiers to evry characters. 
+//These unique ids are called code points. All 2^16 code poinst are represented with 16 bit code unit.--Basic multi Lingual Plane.
+// Those characters , whose code points cannot be represented via 16 bit code points, a supplementary code unit is introduced for them. 
+//which are called supplementary units. (i.e. 16 bit + 16 bit , total 32 bit is used to represent that code point)
+
+var text = "𠮷a";
+console.log(text.length);
+console.log(/^.$/.test(text));      
+console.log(text.charAt(0));        
+console.log(text.charAt(1));        
+console.log(text.charCodeAt(0));    
+console.log(text.charCodeAt(1)); 
+
+//ECMA 6 added a function codePointAt --> returns unicode code point maps to a position in a string.
+console.log(text.codePointAt(0));
+console.log(text.codePointAt(1));
+console.log(text.codePointAt(2));
+console.log(String.fromCodePoint(134071)); 
+
+//For reg ex pattern matching :- 'u' code is introduced.
+
+//String methods :-
+var data = "Hello  World!";
+console.log(data.indexOf('H'));
+console.log(data.includes('e'));
+console.log(data.startsWith('H'));
+console.log(data.endsWith('!')); 
+console.log(data.includes('e', 1));
+console.log(data.startsWith('H',0));
+console.log(data.endsWith('!',0)); 
+console.log("x".repeat(10));
+
+//Reguler Expression and Flagged property :- kept for later.
+
+//Template Literals :-
+
+
+
+
+
+
+//Java script modules:-
