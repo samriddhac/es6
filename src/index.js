@@ -1,3 +1,5 @@
+import {perObj} from './module_1.js';
+
 //Proof of Concept Script 1
 //Block Bindling :- Usage of let
 
@@ -124,3 +126,7 @@ console.log("x".repeat(10));
 
 
 //Java script modules:-
+
+
+//Javascript class callings
+perObj.sayName();
